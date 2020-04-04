@@ -28,13 +28,17 @@ class Product {
 
 // Setter
   set description(String value) {
-    if (value.length >= 2) {
+    if (value.length >= 10) {
       _description = value;
     }
   }
 
 // Setter
-  set price(double value) => value;
+  set price(double value){
+    if(value > 0){
+      _price = value;
+    }
+  }
 //Maps
   Map<String, dynamic> toMap() {
     var map = Map<String, dynamic>();
@@ -52,10 +56,10 @@ class Product {
   
   Product.fromObject(dynamic o){
     
-    this._id = o["Id"];
-    this._name = o["Name"];
-    this._description = o["Description"];
-    this._price = double.tryParse(o["Price"].toString());
+    this._id = o.value["Id"];
+    this._name = o.value["Name"];
+    this._description = o.value["Description"];
+    this._price = double.tryParse(o.value["Price"].toString());
 
   }
 }

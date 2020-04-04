@@ -36,14 +36,14 @@ class ProductAddState extends State {
                 decoration: InputDecoration(labelText: "Price"),
               ),
               FlatButton(onPressed: () {
-                Save();
+                save();
               }, child: Text("Save"))
             ],
           ),
         ));
   }
 
-  void Save() async {
+  void save() async {
     int result = await dbHelper.insert(Product(
         txtName.text, txtDescription.text, double.tryParse(txtPrice.text)));
 

@@ -3,6 +3,7 @@ import 'package:marketing_app/db/dbHelper.dart';
 import 'package:marketing_app/models/product.dart';
 
 class ProductDetail extends StatefulWidget {
+  
   Product product;
   ProductDetail(this.product);
 

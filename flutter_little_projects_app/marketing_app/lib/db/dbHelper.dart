@@ -1,4 +1,3 @@
-
 import 'package:sqflite/sqflite.dart';
 import 'dart:async';
 import 'dart:io';
@@ -19,6 +18,7 @@ class DbHelper {
   static final DbHelper _dbHelper = DbHelper._internal();
 
   DbHelper._internal();
+  
 
   factory DbHelper() {
     return _dbHelper;
@@ -40,11 +40,11 @@ class DbHelper {
   Future<Database> initializeDb() async {
     Directory directory = await getApplicationDocumentsDirectory();
 
-    String path = directory.path + "etrade.db";
+    String path = directory.path + "marketing";
 
-    var dbEtrade = await openDatabase(path, version: 1, onCreate: _createDb);
+    var  dbMarketing = await openDatabase(path, version: 1, onCreate: _createDb);
 
-    return dbEtrade;
+    return dbMarketing;
   }
 
   void _createDb(Database db, int version) async {
@@ -57,7 +57,7 @@ class DbHelper {
   Future<int> insert(Product product) async {
     Database db = await this.db;
     var result = await db.insert(tblProduct, product.toMap());
-  
+
     return result;
   }
 
@@ -71,25 +71,22 @@ class DbHelper {
     return result;
   }
 
-
 //Delete Operasyonu
   Future<int> delete(Product id) async {
     Database db = await this.db;
 
-   // var result = await db.delete(tblProduct);
-    var result = await db.rawDelete("Delete from $tblProduct where $colId = $id");
-   
-    return result;   
+    // var result = await db.delete(tblProduct);
+    var result =await db.rawDelete("Delete from $tblProduct where $colId = $id");
+
+    return result;
   }
 
 // Select Operasyonu
- Future<List> getProducts() async{
+  Future<List> getProducts() async {
+    Database db = await this.db;
 
-  Database db = await this.db;
+    var result = await db.rawQuery("Select * from $tblProduct");
 
-  var result = await db.rawQuery("Select * from $tblProduct");
- 
-  return result;
-   
-   }
+    return result;
+  }
 }

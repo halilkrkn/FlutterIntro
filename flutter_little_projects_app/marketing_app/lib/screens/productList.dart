@@ -16,13 +16,12 @@ class ProductListState extends State {
   @override
   Widget build(BuildContext context) {
     if (products == null) {
-      products = List<
-          Product>(); // new lemeye gerek yok bu şekilde de aynı kullanım oluyor.
+      products = List<Product>(); // new lemeye gerek yok bu şekilde de aynı kullanım oluyor.
       getData();
     }
 
     return Scaffold(
-      body: ProductListItems(),
+      body: productListItems(),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           goToProductAdd();
@@ -33,8 +32,8 @@ class ProductListState extends State {
     );
   }
 
-  ListView ProductListItems() {
-    return ListView.builder(
+  ListView productListItems() {
+    return new  ListView.builder(
       itemCount: count,
       itemBuilder: (BuildContext context, int position) {
         return Card(
@@ -60,7 +59,7 @@ class ProductListState extends State {
   void getData() {
     var dbFuture = dbHelper.initializeDb();
 
-    dbFuture.then((result) {
+    dbFuture.then((result){
       var productsFuture = dbHelper.getProducts();
       productsFuture.then((data) {
         List<Product> productsData = List<Product>();
