@@ -45,7 +45,7 @@ class StatusScreen extends StatelessWidget {
                   "My Status",
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
-                subtitle: Text("Tap to add status update"),
+                subtitle: Text("Bir Durum YÜkle"),
               ),
             ),
           ),
@@ -66,10 +66,10 @@ class StatusScreen extends StatelessWidget {
                     leading: CircleAvatar(
                       radius: 30,
                       backgroundImage: NetworkImage(
-                          "https://pbs.twimg.com/media/EClDvMXU4AAw_lt?format=jpg&name=medium"),
+                          "https://avatars1.githubusercontent.com/u/42476890?s=400&u=01d9c5f068901e1cbd02c32b00e6a07c69d7af73&v=4"),
                     ),
                     title: Text(
-                      "Pawan Kumar",
+                      "Halil Karkin",
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
                     subtitle: Text("Today, 20:16 PM"),
