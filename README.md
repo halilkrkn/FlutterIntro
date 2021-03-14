@@ -1,7 +1,7 @@
 # FlutterIntro
 Learning to Flutter
 
-Bu Seride Udemy üzerinden A'dan Z'ye Google Flutter : IOS ve Android Geliştirme |2019 Kursumu bitirerek orta seviye bir düzeye geldim.
+Bu Seride Udemy üzerinden A'dan Z'ye Google Flutter : IOS ve Android Geliştirme |2019 Kursumu bitirerek orta seviye bir düzeye geldiğimi düşünüyorum.
 Bu kursta;
 
 Flutter ailesine giriş yaparak ve bu konuda tamamen ileri seviye bir düzeyde olmasa da orta seviye bir bilgi düzeyine ulaştığımı düşünüyorum.
